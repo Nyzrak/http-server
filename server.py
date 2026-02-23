@@ -2,7 +2,7 @@ from http.server import *
 from http_statuses import *
 
 
-class HandlineLandingPage(BaseHTTPRequestHandler):
+class CurrentStartpoint(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(HTTP_OK)
 
@@ -12,6 +12,6 @@ class HandlineLandingPage(BaseHTTPRequestHandler):
         self.wfile.write('<h1>welcome!</h1>'.encode())
 
 
-port = HTTPServer(('', 8080), HandlineLandingPage)
+port = HTTPServer(('', 8080), CurrentStartpoint)
 
 port.serve_forever()
